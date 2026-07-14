@@ -10,7 +10,6 @@ type WorkItem = {
 type RecordItem = {
   album: string;
   artist: string;
-  track: string;
   year: string;
   image: string;
   href: string;
@@ -41,66 +40,59 @@ const records: readonly RecordItem[] = [
   {
     album: "Graduation",
     artist: "Kanye West",
-    track: "I Wonder",
     year: "2007",
     image: "/music/graduation.jpg",
-    href: "https://open.spotify.com/track/7rbECVPkY5UODxoOUVKZnA",
+    href: "https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3",
   },
   {
     album: "Swimming",
     artist: "Mac Miller",
-    track: "Small Worlds",
     year: "2018",
     image: "/music/swimming.jpg",
-    href: "https://open.spotify.com/track/4gT3mNJA8lnlkYFqGZ8IA2",
+    href: "https://open.spotify.com/album/5wtE5aLX5r7jOosmPhJhhk",
   },
   {
     album: "Isolation",
     artist: "Kali Uchis",
-    track: "After the Storm",
     year: "2018",
     image: "/music/isolation.jpg",
-    href: "https://open.spotify.com/track/1otG6j1WHNvl9WgXLWkHTo",
+    href: "https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY",
   },
   {
     album: "The Slow Rush",
     artist: "Tame Impala",
-    track: "Borderline",
     year: "2020",
     image: "/music/the-slow-rush.jpg",
-    href: "https://open.spotify.com/track/5hM5arv9KDbCHS0k9uqwjr",
+    href: "https://open.spotify.com/album/31qVWUdRrlb8thMvts0yYL",
   },
   {
     album: "So Much Fun",
     artist: "Young Thug",
-    track: "Hot",
     year: "2019",
     image: "/music/so-much-fun.jpg",
-    href: "https://open.spotify.com/track/5Z8HZM6iQMhhqyPcCGY5g9",
+    href: "https://open.spotify.com/album/1bnHPO4dKK7IjvgrtVBcQh",
   },
   {
     album: "Eternal Atake",
     artist: "Lil Uzi Vert",
-    track: "Baby Pluto",
     year: "2020",
     image: "/music/eternal-atake.jpg",
-    href: "https://open.spotify.com/track/7hav1MHURQf5SAoPk0egqh",
+    href: "https://open.spotify.com/album/7IyoGB8J31fvQDwGtHAq9m",
   },
   {
     album: "Finally Rich",
     artist: "Chief Keef",
-    track: "Love Sosa",
     year: "2012",
     image: "/music/finally-rich.jpg",
-    href: "https://open.spotify.com/track/01Lr5YepbgjXAWR9iOEyH1",
+    href: "https://open.spotify.com/album/2B4y3j02ho6XNF8BEzx3JF",
   },
   {
-    album: "56 Nights",
+    album: "DS2 (Deluxe)",
     artist: "Future",
-    track: "March Madness",
     year: "2015",
-    image: "/music/56-nights.jpg",
-    href: "https://open.spotify.com/track/3WcC6NH9J77xPEvj1SOL7z",
+    image:
+      "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273b2592bea12d840fd096ef965",
+    href: "https://open.spotify.com/album/0fUy6IdLHDpGNwavIlhEsl",
   },
 ];
 
@@ -271,8 +263,8 @@ export function PortfolioExperience() {
                   href={record.href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`${record.track} by ${record.artist} on Spotify`}
-                  key={record.track}
+                  aria-label={`${record.album} by ${record.artist} on Spotify`}
+                  key={record.album}
                 >
                   <div className="record-cover">
                     <Image

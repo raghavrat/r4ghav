@@ -51,6 +51,11 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /Swimming/);
   assert.match(html, /Eternal Atake/);
   assert.match(html, /Finally Rich/);
+  assert.match(html, /DS2 \(Deluxe\)/);
+  assert.doesNotMatch(html, /56 Nights/);
+  assert.match(html, /open\.spotify\.com\/album\/4SZko61aMnmgvNhfhgTuD3/);
+  assert.match(html, /open\.spotify\.com\/album\/0fUy6IdLHDpGNwavIlhEsl/);
+  assert.doesNotMatch(html, /open\.spotify\.com\/track\//);
   assert.doesNotMatch(html, /record-track/);
   assert.doesNotMatch(
     html,
@@ -74,7 +79,9 @@ test("keeps the portfolio static and its media local", async () => {
   assert.match(css, /--forest:\s*#33453a/);
   assert.match(component, /\/music\/graduation\.jpg/);
   assert.match(component, /\/music\/eternal-atake\.jpg/);
-  assert.match(component, /\/music\/56-nights\.jpg/);
+  assert.match(component, /DS2 \(Deluxe\)/);
+  assert.match(component, /open\.spotify\.com\/album\//);
+  assert.doesNotMatch(component, /open\.spotify\.com\/track\//);
   assert.doesNotMatch(component, /className="record-track"/);
   assert.doesNotMatch(component, /gallery-lead|photo-grid/);
 

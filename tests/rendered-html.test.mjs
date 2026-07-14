@@ -36,7 +36,11 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /id="hero-title"/);
   assert.match(html, /Raghav/);
   assert.match(html, /Ratnani/);
+  assert.doesNotMatch(html, /class="topbar"|<nav\b/i);
   assert.match(html, /id="work"/);
+  assert.doesNotMatch(html, />Work</i);
+  assert.match(html, /https:\/\/decapal\.org/);
+  assert.match(html, /https:\/\/github\.com\/Stormgears/);
   assert.match(html, /id="photography"/);
   assert.match(html, /class="photo-archive"/);
   assert.match(html, /id="music"/);

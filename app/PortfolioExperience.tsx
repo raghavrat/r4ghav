@@ -27,11 +27,13 @@ const work: readonly WorkItem[] = [
     name: "DecaPal",
     discipline: "Founder and product",
     note: "Independent / 2025",
+    href: "https://decapal.org",
   },
   {
     name: "Robotics",
     discipline: "Controls and autonomy",
     note: "Labs / Ongoing",
+    href: "https://github.com/Stormgears",
   },
 ];
 
@@ -106,20 +108,8 @@ export function PortfolioExperience() {
   return (
     <>
       <a className="skip-link" href="#work">
-        Skip to work
+        Skip to projects
       </a>
-
-      <header className="topbar">
-        <a className="topbar-name" href="#top" aria-label="Back to top">
-          Raghav Ratnani
-        </a>
-        <span className="topbar-role">Engineer / Photographer</span>
-        <nav aria-label="Primary navigation">
-          <a href="#work">Work</a>
-          <a href="#photography">Photos</a>
-          <a href="#music">Music</a>
-        </nav>
-      </header>
 
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
@@ -141,11 +131,7 @@ export function PortfolioExperience() {
           </figure>
         </section>
 
-        <section className="work-section" id="work" aria-labelledby="work-title">
-          <div className="section-masthead">
-            <h2 id="work-title">Work</h2>
-          </div>
-
+        <section className="work-section" id="work" aria-label="Projects">
           <div className="work-ledger">
             {work.map((item, index) => (
               <article className="work-row" key={item.name}>

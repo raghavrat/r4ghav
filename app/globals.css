@@ -79,47 +79,6 @@ a:focus-visible {
   transform: translateY(0);
 }
 
-.topbar {
-  position: fixed;
-  z-index: 50;
-  top: 0;
-  right: 0;
-  left: 0;
-  display: grid;
-  height: 48px;
-  grid-template-columns: 1fr 1fr auto;
-  align-items: center;
-  padding: 0 2.2vw;
-  border-bottom: 1px solid var(--line);
-  background: rgba(238, 233, 219, 0.91);
-  font-size: 9px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  backdrop-filter: blur(12px);
-}
-
-.topbar-name {
-  font-weight: 600;
-}
-
-.topbar-role {
-  justify-self: center;
-  color: rgba(27, 28, 23, 0.68);
-}
-
-.topbar nav {
-  display: flex;
-  gap: clamp(16px, 2.4vw, 38px);
-}
-
-.topbar a {
-  transition: color 150ms ease;
-}
-
-.topbar a:hover {
-  color: var(--clay);
-}
-
 .hero {
   position: relative;
   display: grid;
@@ -127,14 +86,14 @@ a:focus-visible {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-template-rows: minmax(0, 1fr);
   column-gap: 1.5vw;
-  padding: 75px 2.2vw 24px;
+  padding: 24px 2.2vw;
   overflow: hidden;
   background: var(--paper);
 }
 
 .hero::before {
   position: absolute;
-  top: 48px;
+  top: 0;
   right: 33.3%;
   bottom: 0;
   width: 1px;
@@ -191,31 +150,12 @@ a:focus-visible {
 }
 
 .work-section {
-  padding: clamp(76px, 8vw, 118px) 2.2vw clamp(86px, 9vw, 132px);
+  padding: 2.2vw 2.2vw clamp(86px, 9vw, 132px);
   border-top: 1px solid var(--line);
   background: var(--canvas);
 }
 
-.section-masthead {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 1.5vw;
-  align-items: start;
-}
-
-.section-masthead h2 {
-  grid-column: 1 / -1;
-  margin: -0.08em 0 0;
-  font-family: var(--display);
-  font-size: clamp(76px, 10.5vw, 170px);
-  font-weight: 500;
-  letter-spacing: -0.055em;
-  line-height: 0.78;
-  text-transform: uppercase;
-}
-
 .work-ledger {
-  margin-top: clamp(58px, 7vw, 100px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -574,22 +514,9 @@ figcaption {
 }
 
 @media (max-width: 700px) {
-  .topbar {
-    grid-template-columns: 1fr auto;
-    padding: 0 14px;
-  }
-
-  .topbar-role {
-    display: none;
-  }
-
-  .topbar nav {
-    gap: 13px;
-  }
-
   .hero {
     min-height: 820px;
-    padding: 72px 14px 18px;
+    padding: 18px 14px;
   }
 
   .hero::before {
@@ -598,7 +525,7 @@ figcaption {
 
   .hero h1 {
     justify-content: flex-start;
-    padding-top: 56px;
+    padding-top: 32px;
     font-size: clamp(92px, 25vw, 158px);
     line-height: 0.66;
   }
@@ -606,7 +533,7 @@ figcaption {
   .hero-image {
     grid-column: 3 / 11;
     height: 54svh;
-    margin-top: 78px;
+    margin-top: 56px;
   }
 
   .work-section,
@@ -615,17 +542,8 @@ figcaption {
     padding-left: 14px;
   }
 
-  .section-masthead {
-    display: block;
-  }
-
-  .section-masthead h2 {
-    margin-top: -0.08em;
-    font-size: clamp(68px, 20vw, 112px);
-  }
-
   .work-ledger {
-    margin-top: 54px;
+    margin-top: 0;
   }
 
   .work-row {

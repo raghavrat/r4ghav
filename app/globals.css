@@ -594,8 +594,7 @@ figcaption {
   text-transform: uppercase;
 }
 
-.record-meta,
-.record-track {
+.record-meta {
   font-size: 8px;
   line-height: 1.5;
 }
@@ -603,14 +602,6 @@ figcaption {
 .record-meta {
   margin-top: 7px;
   text-transform: uppercase;
-}
-
-.record-track {
-  margin-top: 2px;
-  color: rgba(27, 28, 23, 0.66);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 11px;
-  font-style: italic;
 }
 
 .playlist-notes {

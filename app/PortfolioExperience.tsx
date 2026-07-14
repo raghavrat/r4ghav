@@ -87,12 +87,12 @@ const records: readonly RecordItem[] = [
     shelf: "B",
   },
   {
-    album: "Playboi Carti",
-    artist: "Playboi Carti",
-    track: "Location",
-    year: "2017",
-    image: "/music/playboi-carti.jpg",
-    href: "https://open.spotify.com/track/3yk7PJnryiJ8mAPqsrujzf",
+    album: "Eternal Atake",
+    artist: "Lil Uzi Vert",
+    track: "Baby Pluto",
+    year: "2020",
+    image: "/music/eternal-atake.jpg",
+    href: "https://open.spotify.com/track/7hav1MHURQf5SAoPk0egqh",
     shelf: "B",
   },
   {
@@ -381,7 +381,6 @@ export function PortfolioExperience() {
                   <span className="record-meta">
                     {record.artist} / {record.year}
                   </span>
-                  <span className="record-track">“{record.track}”</span>
                 </a>
               ))}
             </div>

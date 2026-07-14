@@ -44,7 +44,9 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /nimbus labs/);
   assert.match(html, /Graduation/);
   assert.match(html, /Swimming/);
+  assert.match(html, /Eternal Atake/);
   assert.match(html, /Finally Rich/);
+  assert.doesNotMatch(html, /record-track/);
   assert.match(html, /\/photography\/dscf4001-2\.jpg/);
 });
 
@@ -62,7 +64,9 @@ test("keeps the portfolio static and its media local", async () => {
   assert.match(css, /--paper:\s*#eee9db/);
   assert.match(css, /--forest:\s*#33453a/);
   assert.match(component, /\/music\/graduation\.jpg/);
+  assert.match(component, /\/music\/eternal-atake\.jpg/);
   assert.match(component, /\/music\/56-nights\.jpg/);
+  assert.doesNotMatch(component, /className="record-track"/);
 
   await Promise.all(
     [
@@ -85,7 +89,7 @@ test("keeps the portfolio static and its media local", async () => {
       "isolation.jpg",
       "the-slow-rush.jpg",
       "so-much-fun.jpg",
-      "playboi-carti.jpg",
+      "eternal-atake.jpg",
       "finally-rich.jpg",
       "56-nights.jpg",
     ].map((filename) =>

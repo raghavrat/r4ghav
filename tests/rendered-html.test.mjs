@@ -33,7 +33,7 @@ test("server-renders the complete portfolio", async () => {
     html,
     /<title>Raghav Ratnani \| Engineer and Photographer<\/title>/i,
   );
-  assert.match(html, /id="hero-title">Raghav/);
+  assert.match(html, /id="cover-title">RR/);
   assert.match(html, /id="work"/);
   assert.match(html, /id="photography"/);
   assert.match(html, /id="music"/);
@@ -54,8 +54,8 @@ test("keeps the portfolio static and its media local", async () => {
   assert.match(page, /<PortfolioExperience \/>/);
   assert.doesNotMatch(component, /"use client"|useEffect|ScrollTrigger/);
   assert.doesNotMatch(packageJson, /"gsap"|"three"/);
-  assert.match(css, /--bone:\s*#eee8da/);
-  assert.match(css, /--olive:\s*#65704d/);
+  assert.match(css, /--bone:\s*#f0ecdf/);
+  assert.match(css, /--forest:\s*#344737/);
   assert.match(component, /\/music\/gibbs-free-energy\.jpg/);
   assert.match(component, /\/music\/nimbus-labs\.jpg/);
 

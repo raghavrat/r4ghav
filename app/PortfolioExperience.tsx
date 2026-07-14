@@ -3,7 +3,6 @@ import Image from "next/image";
 type WorkItem = {
   name: string;
   discipline: string;
-  detail: string;
   note: string;
   href?: string;
 };
@@ -15,27 +14,23 @@ type RecordItem = {
   year: string;
   image: string;
   href: string;
-  shelf: "A" | "B";
 };
 
 const work: readonly WorkItem[] = [
   {
     name: "Cumulus Labs",
     discipline: "Software engineer",
-    detail: "AI infrastructure for production systems that need speed and control.",
     note: "YC W26 / Current",
     href: "https://cumuluslabs.io",
   },
   {
     name: "DecaPal",
     discipline: "Founder and product",
-    detail: "An AI sparring partner for high-stakes competitive roleplay.",
     note: "Independent / 2025",
   },
   {
     name: "Robotics",
     discipline: "Controls and autonomy",
-    detail: "Software for machines that make decisions in the real world.",
     note: "Labs / Ongoing",
   },
 ];
@@ -48,7 +43,6 @@ const records: readonly RecordItem[] = [
     year: "2007",
     image: "/music/graduation.jpg",
     href: "https://open.spotify.com/track/7rbECVPkY5UODxoOUVKZnA",
-    shelf: "A",
   },
   {
     album: "Swimming",
@@ -57,7 +51,6 @@ const records: readonly RecordItem[] = [
     year: "2018",
     image: "/music/swimming.jpg",
     href: "https://open.spotify.com/track/4gT3mNJA8lnlkYFqGZ8IA2",
-    shelf: "A",
   },
   {
     album: "Isolation",
@@ -66,7 +59,6 @@ const records: readonly RecordItem[] = [
     year: "2018",
     image: "/music/isolation.jpg",
     href: "https://open.spotify.com/track/1otG6j1WHNvl9WgXLWkHTo",
-    shelf: "A",
   },
   {
     album: "The Slow Rush",
@@ -75,7 +67,6 @@ const records: readonly RecordItem[] = [
     year: "2020",
     image: "/music/the-slow-rush.jpg",
     href: "https://open.spotify.com/track/5hM5arv9KDbCHS0k9uqwjr",
-    shelf: "A",
   },
   {
     album: "So Much Fun",
@@ -84,7 +75,6 @@ const records: readonly RecordItem[] = [
     year: "2019",
     image: "/music/so-much-fun.jpg",
     href: "https://open.spotify.com/track/5Z8HZM6iQMhhqyPcCGY5g9",
-    shelf: "B",
   },
   {
     album: "Eternal Atake",
@@ -93,7 +83,6 @@ const records: readonly RecordItem[] = [
     year: "2020",
     image: "/music/eternal-atake.jpg",
     href: "https://open.spotify.com/track/7hav1MHURQf5SAoPk0egqh",
-    shelf: "B",
   },
   {
     album: "Finally Rich",
@@ -102,7 +91,6 @@ const records: readonly RecordItem[] = [
     year: "2012",
     image: "/music/finally-rich.jpg",
     href: "https://open.spotify.com/track/01Lr5YepbgjXAWR9iOEyH1",
-    shelf: "B",
   },
   {
     album: "56 Nights",
@@ -111,7 +99,6 @@ const records: readonly RecordItem[] = [
     year: "2015",
     image: "/music/56-nights.jpg",
     href: "https://open.spotify.com/track/3WcC6NH9J77xPEvj1SOL7z",
-    shelf: "B",
   },
 ];
 
@@ -136,12 +123,6 @@ export function PortfolioExperience() {
 
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-kicker">
-            <span>Vol. 01</span>
-            <span>New York / Boston</span>
-            <span>2026</span>
-          </div>
-
           <h1 id="hero-title">
             <span>Raghav</span>
             <span>Ratnani</span>
@@ -158,36 +139,11 @@ export function PortfolioExperience() {
               unoptimized
             />
           </figure>
-
-          <div className="hero-intro">
-            <p>
-              I make software, photograph cities, and keep a close eye on the
-              details that make both feel alive.
-            </p>
-            <span>Currently at Cumulus Labs / YC W26</span>
-          </div>
-
-          <div className="hero-index" aria-label="Portfolio sections">
-            <span>01 / Selected work</span>
-            <span>02 / Night studies</span>
-            <span>03 / In rotation</span>
-          </div>
-
-          <p className="hero-scroll">Scroll to enter ↓</p>
         </section>
 
         <section className="work-section" id="work" aria-labelledby="work-title">
           <div className="section-masthead">
-            <p>01 / Selected work</p>
-            <h2 id="work-title">
-              Useful things,
-              <br />
-              made carefully.
-            </h2>
-            <p className="section-deck">
-              Software, systems, and machines. The work should be sharp enough
-              to disappear into the task.
-            </p>
+            <h2 id="work-title">Work</h2>
           </div>
 
           <div className="work-ledger">
@@ -204,7 +160,6 @@ export function PortfolioExperience() {
                     item.name
                   )}
                 </h3>
-                <p className="work-detail">{item.detail}</p>
                 <p className="work-note">{item.note}</p>
               </article>
             ))}
@@ -217,12 +172,7 @@ export function PortfolioExperience() {
           aria-labelledby="photography-title"
         >
           <div className="photo-masthead">
-            <p>02 / Night studies</p>
-            <h2 id="photography-title">The city after dark.</h2>
-            <p>
-              Bridges, reflected light, and the quiet parts of New York that
-              hold still long enough to become a frame.
-            </p>
+            <h2 id="photography-title">Photography</h2>
           </div>
 
           <div className="photo-archive">
@@ -238,7 +188,6 @@ export function PortfolioExperience() {
               />
               <figcaption>
                 <span>001</span>
-                <span>Manhattan Bridge / New York</span>
               </figcaption>
             </figure>
 
@@ -254,7 +203,6 @@ export function PortfolioExperience() {
               />
               <figcaption>
                 <span>002</span>
-                <span>Through the bridge</span>
               </figcaption>
             </figure>
 
@@ -270,7 +218,6 @@ export function PortfolioExperience() {
               />
               <figcaption>
                 <span>003</span>
-                <span>Lower Manhattan, across the river</span>
               </figcaption>
             </figure>
 
@@ -286,7 +233,6 @@ export function PortfolioExperience() {
               />
               <figcaption>
                 <span>004</span>
-                <span>Brooklyn Bridge in haze</span>
               </figcaption>
             </figure>
 
@@ -302,7 +248,6 @@ export function PortfolioExperience() {
               />
               <figcaption>
                 <span>005</span>
-                <span>Understructure</span>
               </figcaption>
             </figure>
 
@@ -318,7 +263,6 @@ export function PortfolioExperience() {
               />
               <figcaption>
                 <span>006</span>
-                <span>East River / Last frame</span>
               </figcaption>
             </figure>
           </div>
@@ -326,14 +270,7 @@ export function PortfolioExperience() {
 
         <section className="music-section" id="music" aria-labelledby="music-title">
           <div className="music-masthead">
-            <div>
-              <p>03 / In rotation</p>
-              <h2 id="music-title">Records I keep coming back to.</h2>
-            </div>
-            <p>
-              Eight pulls from two very different playlists. Part late-night
-              drive, part loud room.
-            </p>
+            <h2 id="music-title">Rotation</h2>
           </div>
 
           <div className="music-layout">
@@ -347,14 +284,10 @@ export function PortfolioExperience() {
                 loading="lazy"
                 unoptimized
               />
-              <figcaption>
-                <span>Drive side A</span>
-                <span>Somewhere near sunset</span>
-              </figcaption>
             </figure>
 
             <div className="record-shelf">
-              {records.map((record, index) => (
+              {records.map((record) => (
                 <a
                   className="record"
                   href={record.href}
@@ -373,9 +306,6 @@ export function PortfolioExperience() {
                       loading="lazy"
                       unoptimized
                     />
-                    <span className="record-sequence">
-                      {record.shelf}.{String(index + 1).padStart(2, "0")}
-                    </span>
                   </div>
                   <span className="record-name">{record.album}</span>
                   <span className="record-meta">
@@ -387,7 +317,6 @@ export function PortfolioExperience() {
           </div>
 
           <div className="playlist-notes">
-            <span>Full playlists</span>
             <a
               href="https://open.spotify.com/playlist/0f605RPG95bwb4KN8o89wk"
               target="_blank"
@@ -407,7 +336,7 @@ export function PortfolioExperience() {
       </main>
 
       <footer className="footer">
-        <p>Let&apos;s make something with a point of view.</p>
+        <span>Raghav Ratnani</span>
         <div>
           <a
             href="https://www.linkedin.com/in/raghav-ratnani"
@@ -424,7 +353,6 @@ export function PortfolioExperience() {
             GitHub ↗
           </a>
         </div>
-        <span>Raghav Ratnani / 2026</span>
       </footer>
     </>
   );

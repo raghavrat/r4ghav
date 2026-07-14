@@ -225,24 +225,24 @@ export function PortfolioExperience() {
             </p>
           </div>
 
-          <figure className="gallery-lead">
-            <Image
-              src="/photography/dscf4001-2.jpg"
-              alt="Manhattan Bridge crossing a purple night sky above a park"
-              width={2200}
-              height={1467}
-              sizes="100vw"
-              loading="lazy"
-              unoptimized
-            />
-            <figcaption>
-              <span>001</span>
-              <span>Manhattan Bridge / New York</span>
-            </figcaption>
-          </figure>
+          <div className="photo-archive">
+            <figure className="archive-frame archive-frame--lead">
+              <Image
+                src="/photography/dscf4001-2.jpg"
+                alt="Manhattan Bridge crossing a purple night sky above a park"
+                width={2200}
+                height={1467}
+                sizes="(max-width: 700px) 100vw, 66vw"
+                loading="lazy"
+                unoptimized
+              />
+              <figcaption>
+                <span>001</span>
+                <span>Manhattan Bridge / New York</span>
+              </figcaption>
+            </figure>
 
-          <div className="photo-grid">
-            <figure className="gallery-figure gallery-figure--portrait-a">
+            <figure className="archive-frame archive-frame--portrait-a">
               <Image
                 src="/photography/dscf4028.jpg"
                 alt="Manhattan Bridge with the Lower Manhattan skyline beyond it"
@@ -258,7 +258,7 @@ export function PortfolioExperience() {
               </figcaption>
             </figure>
 
-            <figure className="gallery-figure gallery-figure--wide-a">
+            <figure className="archive-frame archive-frame--wide-a">
               <Image
                 src="/photography/dscf4005.jpg"
                 alt="Brooklyn Bridge and Lower Manhattan illuminated at night"
@@ -274,7 +274,7 @@ export function PortfolioExperience() {
               </figcaption>
             </figure>
 
-            <figure className="gallery-figure gallery-figure--wide-b">
+            <figure className="archive-frame archive-frame--wide-b">
               <Image
                 src="/photography/dscf4023.jpg"
                 alt="Brooklyn Bridge, skyline, and carousel reflected in the East River"
@@ -290,7 +290,7 @@ export function PortfolioExperience() {
               </figcaption>
             </figure>
 
-            <figure className="gallery-figure gallery-figure--portrait-b">
+            <figure className="archive-frame archive-frame--portrait-b">
               <Image
                 src="/photography/dscf3993.jpg"
                 alt="Bridge tower rising above foliage in purple evening light"
@@ -305,23 +305,23 @@ export function PortfolioExperience() {
                 <span>Understructure</span>
               </figcaption>
             </figure>
-          </div>
 
-          <figure className="gallery-close">
-            <Image
-              src="/photography/dscf4031-5.jpg"
-              alt="Manhattan Bridge and city lights reflected across the East River"
-              width={2200}
-              height={1466}
-              sizes="100vw"
-              loading="lazy"
-              unoptimized
-            />
-            <figcaption>
-              <span>006</span>
-              <span>East River / Last frame</span>
-            </figcaption>
-          </figure>
+            <figure className="archive-frame archive-frame--closing">
+              <Image
+                src="/photography/dscf4031-5.jpg"
+                alt="Manhattan Bridge and city lights reflected across the East River"
+                width={2200}
+                height={1466}
+                sizes="(max-width: 700px) 100vw, 66vw"
+                loading="lazy"
+                unoptimized
+              />
+              <figcaption>
+                <span>006</span>
+                <span>East River / Last frame</span>
+              </figcaption>
+            </figure>
+          </div>
         </section>
 
         <section className="music-section" id="music" aria-labelledby="music-title">

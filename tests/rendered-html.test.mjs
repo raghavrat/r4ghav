@@ -38,6 +38,7 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /Ratnani/);
   assert.match(html, /id="work"/);
   assert.match(html, /id="photography"/);
+  assert.match(html, /class="photo-archive"/);
   assert.match(html, /id="music"/);
   assert.match(html, /Cumulus Labs/);
   assert.match(html, /gibbs free energy/);
@@ -67,6 +68,7 @@ test("keeps the portfolio static and its media local", async () => {
   assert.match(component, /\/music\/eternal-atake\.jpg/);
   assert.match(component, /\/music\/56-nights\.jpg/);
   assert.doesNotMatch(component, /className="record-track"/);
+  assert.doesNotMatch(component, /gallery-lead|photo-grid/);
 
   await Promise.all(
     [

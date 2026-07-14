@@ -8,6 +8,8 @@
   --line: rgba(238, 240, 232, 0.17);
   --acid: #a8ff3e;
   --nav-height: 72px;
+  --font-geist-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
 @theme inline {
@@ -32,7 +34,7 @@ body {
   overflow-x: hidden;
   background: var(--ink);
   color: var(--paper);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: var(--font-geist-sans);
   -webkit-font-smoothing: antialiased;
 }
 

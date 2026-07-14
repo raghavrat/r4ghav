@@ -9,8 +9,6 @@ type WorkItem = {
 
 type RecordItem = {
   album: string;
-  artist: string;
-  year: string;
   image: string;
   href: string;
 };
@@ -39,57 +37,41 @@ const work: readonly WorkItem[] = [
 const records: readonly RecordItem[] = [
   {
     album: "Graduation",
-    artist: "Kanye West",
-    year: "2007",
     image: "/music/graduation.jpg",
     href: "https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3",
   },
   {
     album: "Swimming",
-    artist: "Mac Miller",
-    year: "2018",
     image: "/music/swimming.jpg",
     href: "https://open.spotify.com/album/5wtE5aLX5r7jOosmPhJhhk",
   },
   {
     album: "Isolation",
-    artist: "Kali Uchis",
-    year: "2018",
     image: "/music/isolation.jpg",
     href: "https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY",
   },
   {
     album: "The Slow Rush",
-    artist: "Tame Impala",
-    year: "2020",
     image: "/music/the-slow-rush.jpg",
     href: "https://open.spotify.com/album/31qVWUdRrlb8thMvts0yYL",
   },
   {
     album: "So Much Fun",
-    artist: "Young Thug",
-    year: "2019",
     image: "/music/so-much-fun.jpg",
     href: "https://open.spotify.com/album/1bnHPO4dKK7IjvgrtVBcQh",
   },
   {
     album: "Eternal Atake",
-    artist: "Lil Uzi Vert",
-    year: "2020",
     image: "/music/eternal-atake.jpg",
     href: "https://open.spotify.com/album/7IyoGB8J31fvQDwGtHAq9m",
   },
   {
     album: "Finally Rich",
-    artist: "Chief Keef",
-    year: "2012",
     image: "/music/finally-rich.jpg",
     href: "https://open.spotify.com/album/2B4y3j02ho6XNF8BEzx3JF",
   },
   {
     album: "DS2 (Deluxe)",
-    artist: "Future",
-    year: "2015",
     image:
       "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273b2592bea12d840fd096ef965",
     href: "https://open.spotify.com/album/0fUy6IdLHDpGNwavIlhEsl",
@@ -263,7 +245,7 @@ export function PortfolioExperience() {
                   href={record.href}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label={`${record.album} by ${record.artist} on Spotify`}
+                  aria-label={`${record.album} on Spotify`}
                   key={record.album}
                 >
                   <div className="record-cover">
@@ -278,9 +260,6 @@ export function PortfolioExperience() {
                     />
                   </div>
                   <span className="record-name">{record.album}</span>
-                  <span className="record-meta">
-                    {record.artist} / {record.year}
-                  </span>
                 </a>
               ))}
             </div>

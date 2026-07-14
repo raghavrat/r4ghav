@@ -376,20 +376,10 @@ figcaption {
 
 .record-name {
   font-family: var(--display);
-  font-size: clamp(24px, 2.4vw, 38px);
+  font-size: clamp(32px, 3.2vw, 52px);
   font-weight: 500;
   letter-spacing: -0.025em;
-  line-height: 0.95;
-  text-transform: uppercase;
-}
-
-.record-meta {
-  font-size: 8px;
-  line-height: 1.5;
-}
-
-.record-meta {
-  margin-top: 7px;
+  line-height: 0.9;
   text-transform: uppercase;
 }
 
@@ -622,7 +612,7 @@ figcaption {
   }
 
   .record-name {
-    font-size: 27px;
+    font-size: 34px;
   }
 
   .playlist-notes {

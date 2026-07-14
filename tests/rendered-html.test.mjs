@@ -57,6 +57,7 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /open\.spotify\.com\/album\/0fUy6IdLHDpGNwavIlhEsl/);
   assert.doesNotMatch(html, /open\.spotify\.com\/track\//);
   assert.doesNotMatch(html, /record-track/);
+  assert.doesNotMatch(html, /record-meta/);
   assert.doesNotMatch(
     html,
     /Useful things|The city after dark|Records I keep coming back|Scroll to enter|point of view|>Photography<|>Rotation</i,

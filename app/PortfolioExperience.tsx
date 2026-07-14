@@ -33,7 +33,7 @@ const work: readonly WorkItem[] = [
     name: "Robotics",
     discipline: "Controls and autonomy",
     note: "Labs / Ongoing",
-    href: "https://github.com/Stormgears",
+    href: "https://github.com/Stormgears-FRC-5422",
   },
 ];
 

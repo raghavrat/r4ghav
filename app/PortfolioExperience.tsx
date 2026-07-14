@@ -117,7 +117,7 @@ export function PortfolioExperience() {
         <nav aria-label="Primary navigation">
           <a href="#work">Work</a>
           <a href="#photography">Photos</a>
-          <a href="#music">Rotation</a>
+          <a href="#music">Music</a>
         </nav>
       </header>
 
@@ -169,12 +169,8 @@ export function PortfolioExperience() {
         <section
           className="photography-section"
           id="photography"
-          aria-labelledby="photography-title"
+          aria-label="Photo collection"
         >
-          <div className="photo-masthead">
-            <h2 id="photography-title">Photography</h2>
-          </div>
-
           <div className="photo-archive">
             <figure className="archive-frame archive-frame--lead">
               <Image
@@ -268,11 +264,7 @@ export function PortfolioExperience() {
           </div>
         </section>
 
-        <section className="music-section" id="music" aria-labelledby="music-title">
-          <div className="music-masthead">
-            <h2 id="music-title">Rotation</h2>
-          </div>
-
+        <section className="music-section" id="music" aria-label="Music">
           <div className="music-layout">
             <figure className="music-photo">
               <Image

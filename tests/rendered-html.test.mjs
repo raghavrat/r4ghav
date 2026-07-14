@@ -50,7 +50,7 @@ test("server-renders the complete portfolio", async () => {
   assert.doesNotMatch(html, /record-track/);
   assert.doesNotMatch(
     html,
-    /Useful things|The city after dark|Records I keep coming back|Scroll to enter|point of view/i,
+    /Useful things|The city after dark|Records I keep coming back|Scroll to enter|point of view|>Photography<|>Rotation</i,
   );
   assert.match(html, /\/photography\/dscf4001-2\.jpg/);
 });

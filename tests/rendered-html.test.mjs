@@ -77,6 +77,10 @@ test("keeps the portfolio static and its media local", async () => {
   assert.doesNotMatch(packageJson, /"gsap"|"three"/);
   assert.match(css, /--paper:\s*#eee9db/);
   assert.match(css, /--forest:\s*#33453a/);
+  assert.doesNotMatch(
+    css,
+    /\.music-photo\s*\{[^}]*position:\s*sticky/s,
+  );
   assert.match(component, /\/music\/graduation\.jpg/);
   assert.match(component, /\/music\/eternal-atake\.jpg/);
   assert.match(component, /DS2 \(Deluxe\)/);

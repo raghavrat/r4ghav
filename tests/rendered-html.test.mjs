@@ -33,13 +33,18 @@ test("server-renders the complete portfolio", async () => {
     html,
     /<title>Raghav Ratnani \| Engineer and Photographer<\/title>/i,
   );
-  assert.match(html, /id="cover-title">RR/);
+  assert.match(html, /id="hero-title"/);
+  assert.match(html, /Raghav/);
+  assert.match(html, /Ratnani/);
   assert.match(html, /id="work"/);
   assert.match(html, /id="photography"/);
   assert.match(html, /id="music"/);
   assert.match(html, /Cumulus Labs/);
   assert.match(html, /gibbs free energy/);
   assert.match(html, /nimbus labs/);
+  assert.match(html, /Graduation/);
+  assert.match(html, /Swimming/);
+  assert.match(html, /Finally Rich/);
   assert.match(html, /\/photography\/dscf4001-2\.jpg/);
 });
 
@@ -54,10 +59,10 @@ test("keeps the portfolio static and its media local", async () => {
   assert.match(page, /<PortfolioExperience \/>/);
   assert.doesNotMatch(component, /"use client"|useEffect|ScrollTrigger/);
   assert.doesNotMatch(packageJson, /"gsap"|"three"/);
-  assert.match(css, /--bone:\s*#f0ecdf/);
-  assert.match(css, /--forest:\s*#344737/);
-  assert.match(component, /\/music\/gibbs-free-energy\.jpg/);
-  assert.match(component, /\/music\/nimbus-labs\.jpg/);
+  assert.match(css, /--paper:\s*#eee9db/);
+  assert.match(css, /--forest:\s*#33453a/);
+  assert.match(component, /\/music\/graduation\.jpg/);
+  assert.match(component, /\/music\/56-nights\.jpg/);
 
   await Promise.all(
     [
@@ -70,6 +75,21 @@ test("keeps the portfolio static and its media local", async () => {
       "dscf4031-5.jpg",
     ].map((filename) =>
       access(new URL(`../public/photography/${filename}`, import.meta.url)),
+    ),
+  );
+
+  await Promise.all(
+    [
+      "graduation.jpg",
+      "swimming.jpg",
+      "isolation.jpg",
+      "the-slow-rush.jpg",
+      "so-much-fun.jpg",
+      "playboi-carti.jpg",
+      "finally-rich.jpg",
+      "56-nights.jpg",
+    ].map((filename) =>
+      access(new URL(`../public/music/${filename}`, import.meta.url)),
     ),
   );
 });

@@ -150,12 +150,15 @@ a:focus-visible {
 }
 
 .work-section {
-  padding: 2.2vw 2.2vw clamp(86px, 9vw, 132px);
+  padding: clamp(28px, 3vw, 52px) clamp(24px, 5vw, 104px)
+    clamp(56px, 5vw, 88px);
   border-top: 1px solid var(--line);
   background: var(--canvas);
 }
 
 .work-ledger {
+  width: min(100%, 1680px);
+  margin-inline: auto;
   border-bottom: 1px solid var(--line);
 }
 
@@ -538,8 +541,8 @@ figcaption {
 
   .work-section,
   .music-section {
-    padding-right: 14px;
-    padding-left: 14px;
+    padding-right: 18px;
+    padding-left: 18px;
   }
 
   .work-ledger {

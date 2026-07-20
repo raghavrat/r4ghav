@@ -2,13 +2,13 @@ import assert from "node:assert/strict";
 import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
+async function render(path = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("http://localhost/", {
+    new Request(`http://localhost${path}`, {
       headers: { accept: "text/html" },
     }),
     {
@@ -65,6 +65,22 @@ test("server-renders the complete portfolio", async () => {
   assert.match(html, /\/photography\/dscf4001-2\.jpg/);
 });
 
+test("server-renders the Finder test site", async () => {
+  const response = await render("/test");
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+
+  const html = await response.text();
+  assert.match(html, /<title>Raghav(?:&apos;|&#x27;|')s Finder<\/title>/i);
+  assert.match(html, /class="finder-desktop"/);
+  assert.match(html, /class="finder-window/);
+  assert.match(html, /aria-label="Desktop folders"/);
+  assert.match(html, />Work</);
+  assert.match(html, />Photography</);
+  assert.match(html, />Music</);
+  assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
+});
+
 test("keeps the portfolio static and its media local", async () => {
   const [page, component, css, packageJson] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
@@ -118,4 +134,32 @@ test("keeps the portfolio static and its media local", async () => {
       access(new URL(`../public/music/${filename}`, import.meta.url)),
     ),
   );
+});
+
+test("keeps the Finder test route complete", async () => {
+  const [component, css, finderPage, packageJson, proxy] = await Promise.all([
+    readFile(new URL("../app/test/FinderExperience.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/test/finder.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/test/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../test-proxy/worker.ts", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(component, /https:\/\/cumuluslabs\.io/);
+  assert.match(component, /https:\/\/decapal\.org/);
+  assert.match(component, /https:\/\/github\.com\/Stormgears-FRC-5422/);
+  assert.match(component, /DS2 \(Deluxe\)/);
+  assert.match(component, /open\.spotify\.com\/album\//);
+  assert.match(component, /setPreview/);
+  assert.match(css, /prefers-color-scheme/);
+  assert.match(css, /prefers-reduced-motion/);
+  assert.match(css, /prefers-reduced-transparency/);
+  assert.match(finderPage, /https:\/\/test\.r4ghav\.xyz/);
+  assert.match(packageJson, /@phosphor-icons\/react/);
+  assert.match(proxy, /r4ghav\.xyz/);
+  assert.match(proxy, /\/test\//);
+  assert.doesNotMatch(component + finderPage, /[—–]/);
+
+  await access(new URL("../public/music/ds2-deluxe.jpg", import.meta.url));
+  await access(new URL("../public/og-finder.png", import.meta.url));
 });

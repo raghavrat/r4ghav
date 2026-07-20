@@ -1,0 +1,7 @@
+name = "r4ghav-test-proxy"
+main = "worker.ts"
+compatibility_date = "2026-07-20"
+
+routes = [
+  { pattern = "test.r4ghav.xyz", custom_domain = true }
+]

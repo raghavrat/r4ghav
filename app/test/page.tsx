@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { FinderExperience } from "./FinderExperience";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://test.r4ghav.xyz"),
+  metadataBase: new URL("https://r4ghav.xyz"),
   title: "Raghav's Finder",
   description:
     "Open Raghav Ratnani's work, photography, and music like files in Finder.",
   openGraph: {
     title: "Raghav's Finder",
     description: "Work, photography, and music inside a Finder-style portfolio.",
-    url: "https://test.r4ghav.xyz",
+    url: "https://r4ghav.xyz/test/",
     siteName: "Raghav Ratnani",
     type: "website",
     images: [

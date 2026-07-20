@@ -66,7 +66,7 @@ test("server-renders the complete portfolio", async () => {
 });
 
 test("server-renders the Finder test site", async () => {
-  const response = await render("/test");
+  const response = await render("/test/");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
@@ -74,7 +74,7 @@ test("server-renders the Finder test site", async () => {
   assert.match(html, /<title>Raghav(?:&apos;|&#x27;|')s Finder<\/title>/i);
   assert.match(html, /class="finder-desktop"/);
   assert.match(html, /class="finder-window/);
-  assert.match(html, /aria-label="Desktop folders"/);
+  assert.match(html, /class="home-folder-grid"/);
   assert.match(html, />Work</);
   assert.match(html, />Photography</);
   assert.match(html, />Music</);
@@ -151,10 +151,12 @@ test("keeps the Finder test route complete", async () => {
   assert.match(component, /DS2 \(Deluxe\)/);
   assert.match(component, /open\.spotify\.com\/album\//);
   assert.match(component, /setPreview/);
+  assert.match(component, /preview-window/);
+  assert.match(component, /preview\.name\} in Preview/);
   assert.match(css, /prefers-color-scheme/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /prefers-reduced-transparency/);
-  assert.match(finderPage, /https:\/\/test\.r4ghav\.xyz/);
+  assert.match(finderPage, /https:\/\/r4ghav\.xyz/);
   assert.match(packageJson, /@phosphor-icons\/react/);
   assert.match(proxy, /r4ghav\.xyz/);
   assert.match(proxy, /\/test\//);
